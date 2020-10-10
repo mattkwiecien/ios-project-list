@@ -13,6 +13,10 @@
 		1502CC9425309F7A0093EACE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1502CC9225309F7A0093EACE /* Main.storyboard */; };
 		1502CC9625309F7B0093EACE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1502CC9525309F7B0093EACE /* Assets.xcassets */; };
 		1502CC9925309F7B0093EACE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1502CC9725309F7B0093EACE /* LaunchScreen.storyboard */; };
+		1502CCA22530A56F0093EACE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502CCA12530A56F0093EACE /* DesignableView.swift */; };
+		1560749325321565002639BB /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749225321565002639BB /* RestManager.swift */; };
+		15607497253215C9002639BB /* RestManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15607496253215C9002639BB /* RestManagerExtensions.swift */; };
+		1560749B25321EF4002639BB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749A25321EF4002639BB /* Session.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		1502CC9525309F7B0093EACE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1502CC9825309F7B0093EACE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1502CC9A25309F7B0093EACE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1502CCA12530A56F0093EACE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		1560749225321565002639BB /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
+		15607496253215C9002639BB /* RestManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManagerExtensions.swift; sourceTree = "<group>"; };
+		1560749A25321EF4002639BB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,8 @@
 		1502CC8025309F7A0093EACE = {
 			isa = PBXGroup;
 			children = (
+				1560749925321EE7002639BB /* Models */,
+				1560749125321555002639BB /* RestManager */,
 				1502CC8B25309F7A0093EACE /* ProjectList */,
 				1502CC8A25309F7A0093EACE /* Products */,
 			);
@@ -63,8 +73,26 @@
 				1502CC9525309F7B0093EACE /* Assets.xcassets */,
 				1502CC9725309F7B0093EACE /* LaunchScreen.storyboard */,
 				1502CC9A25309F7B0093EACE /* Info.plist */,
+				1502CCA12530A56F0093EACE /* DesignableView.swift */,
 			);
 			path = ProjectList;
+			sourceTree = "<group>";
+		};
+		1560749125321555002639BB /* RestManager */ = {
+			isa = PBXGroup;
+			children = (
+				1560749225321565002639BB /* RestManager.swift */,
+				15607496253215C9002639BB /* RestManagerExtensions.swift */,
+			);
+			path = RestManager;
+			sourceTree = "<group>";
+		};
+		1560749925321EE7002639BB /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1560749A25321EF4002639BB /* Session.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1560749B25321EF4002639BB /* Session.swift in Sources */,
+				1502CCA22530A56F0093EACE /* DesignableView.swift in Sources */,
+				15607497253215C9002639BB /* RestManagerExtensions.swift in Sources */,
+				1560749325321565002639BB /* RestManager.swift in Sources */,
 				1502CC9125309F7A0093EACE /* ViewController.swift in Sources */,
 				1502CC8D25309F7A0093EACE /* AppDelegate.swift in Sources */,
 				1502CC8F25309F7A0093EACE /* SceneDelegate.swift in Sources */,
