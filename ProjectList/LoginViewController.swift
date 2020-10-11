@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
 	@IBOutlet fileprivate var password: UITextField!
 	@IBOutlet fileprivate var email: UITextField!
@@ -56,10 +56,6 @@ class ViewController: UIViewController {
 				
 			}
 		}
-	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-
 	}
 
 }
