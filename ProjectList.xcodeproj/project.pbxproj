@@ -16,7 +16,12 @@
 		1502CCA22530A56F0093EACE /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502CCA12530A56F0093EACE /* DesignableView.swift */; };
 		1560749325321565002639BB /* RestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749225321565002639BB /* RestManager.swift */; };
 		15607497253215C9002639BB /* RestManagerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15607496253215C9002639BB /* RestManagerExtensions.swift */; };
-		1560749B25321EF4002639BB /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749A25321EF4002639BB /* Session.swift */; };
+		1560749B25321EF4002639BB /* BTSessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749A25321EF4002639BB /* BTSessionData.swift */; };
+		156074A0253356C8002639BB /* APICredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1560749F253356C8002639BB /* APICredentials.swift */; };
+		156074A5253356FD002639BB /* KeychainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156074A4253356FD002639BB /* KeychainError.swift */; };
+		156074AB25335986002639BB /* APICredentials+BTSessionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156074AA25335986002639BB /* APICredentials+BTSessionData.swift */; };
+		156074AE25335DD1002639BB /* APICredentials+AddToKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156074AD25335DD1002639BB /* APICredentials+AddToKeychain.swift */; };
+		156074B125335F95002639BB /* APICredentials+GetFromKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 156074B025335F95002639BB /* APICredentials+GetFromKeychain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +36,12 @@
 		1502CCA12530A56F0093EACE /* DesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
 		1560749225321565002639BB /* RestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManager.swift; sourceTree = "<group>"; };
 		15607496253215C9002639BB /* RestManagerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestManagerExtensions.swift; sourceTree = "<group>"; };
-		1560749A25321EF4002639BB /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		1560749A25321EF4002639BB /* BTSessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTSessionData.swift; sourceTree = "<group>"; };
+		1560749F253356C8002639BB /* APICredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICredentials.swift; sourceTree = "<group>"; };
+		156074A4253356FD002639BB /* KeychainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainError.swift; sourceTree = "<group>"; };
+		156074AA25335986002639BB /* APICredentials+BTSessionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APICredentials+BTSessionData.swift"; sourceTree = "<group>"; };
+		156074AD25335DD1002639BB /* APICredentials+AddToKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APICredentials+AddToKeychain.swift"; sourceTree = "<group>"; };
+		156074B025335F95002639BB /* APICredentials+GetFromKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APICredentials+GetFromKeychain.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +58,7 @@
 		1502CC8025309F7A0093EACE = {
 			isa = PBXGroup;
 			children = (
+				1560749E253356BB002639BB /* Keychain */,
 				1560749925321EE7002639BB /* Models */,
 				1560749125321555002639BB /* RestManager */,
 				1502CC8B25309F7A0093EACE /* ProjectList */,
@@ -90,9 +101,21 @@
 		1560749925321EE7002639BB /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				1560749A25321EF4002639BB /* Session.swift */,
+				1560749A25321EF4002639BB /* BTSessionData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		1560749E253356BB002639BB /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				1560749F253356C8002639BB /* APICredentials.swift */,
+				156074A4253356FD002639BB /* KeychainError.swift */,
+				156074AA25335986002639BB /* APICredentials+BTSessionData.swift */,
+				156074AD25335DD1002639BB /* APICredentials+AddToKeychain.swift */,
+				156074B025335F95002639BB /* APICredentials+GetFromKeychain.swift */,
+			);
+			path = Keychain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,12 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1560749B25321EF4002639BB /* Session.swift in Sources */,
+				156074AB25335986002639BB /* APICredentials+BTSessionData.swift in Sources */,
+				1560749B25321EF4002639BB /* BTSessionData.swift in Sources */,
+				156074B125335F95002639BB /* APICredentials+GetFromKeychain.swift in Sources */,
 				1502CCA22530A56F0093EACE /* DesignableView.swift in Sources */,
+				156074AE25335DD1002639BB /* APICredentials+AddToKeychain.swift in Sources */,
 				15607497253215C9002639BB /* RestManagerExtensions.swift in Sources */,
 				1560749325321565002639BB /* RestManager.swift in Sources */,
 				1502CC9125309F7A0093EACE /* ViewController.swift in Sources */,
+				156074A0253356C8002639BB /* APICredentials.swift in Sources */,
 				1502CC8D25309F7A0093EACE /* AppDelegate.swift in Sources */,
+				156074A5253356FD002639BB /* KeychainError.swift in Sources */,
 				1502CC8F25309F7A0093EACE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

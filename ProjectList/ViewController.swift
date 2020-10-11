@@ -14,35 +14,46 @@ class ViewController: UIViewController {
 	
 	@IBOutlet weak var loginButton: UIButton!
 	
-	let rest = RestManager()
+	let btRestClient = RestManager("https://stage.bigtime.net/BigtimeData/api/v2")
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		
+		if let existingLogin = APICredentials.getFromKeychain() {
+			print("Found existing saved credentials with conm \(existingLogin.conm) and token\(existingLogin.token)")
+		} else {
+			print("No credentials found.")
+		}
+		
 		password.text = ""
 		email.text = ""
 		
 	}
 	
 	@IBAction func loginTouchUp(_ sender: UIButton) {
-		print("Login pressed.")
-		guard let url = URL(string: "https://stage.bigtime.net/BigtimeData/api/v2/session") else { return }
 		
-		rest.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
-		if let email = self.email.text {
-			rest.httpBodyParameters.add(value: email, forKey: "UserId")
-		}
-		if let pass = self.password.text {
-			rest.httpBodyParameters.add(value: pass, forKey: "Pwd")
-		}
+		btRestClient.requestHttpHeaders.add(value: "application/json", forKey: "Content-Type")
 		
-		rest.makeRequest(toURL: url, withHttpMethod: .post) { (results) in
+		let email = self.email.text ?? ""
+		btRestClient.httpBodyParameters.add(value: email, forKey: "UserId")
+		
+		let pass = self.password.text ?? ""
+		btRestClient.httpBodyParameters.add(value: pass, forKey: "Pwd")
+		
+		
+		btRestClient.makeRequest(toAction: "/session", withHttpMethod: .post) { (results) in
 			if let data = results.data {
-//				print(data)
 				let decoder = JSONDecoder()
-				guard let sessionData = try? decoder.decode(BTSession.self, from: data) else { return }
+				guard let sessionData = try? decoder.decode(BTSessionData.self, from: data) else { return }
+				
+				let myCreds = APICredentials.init(btSessionData: sessionData)
 				print("Firm: \(sessionData.firm!)")
 				print("Token: \(sessionData.token!)")
+				
+				if (myCreds.addToKeychain()){
+					print("Credentials saved in keychain")
+				}
+				
 			}
 		}
 	}

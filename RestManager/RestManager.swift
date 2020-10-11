@@ -9,13 +9,16 @@ import Foundation
 
 class RestManager {
 	
+	let baseUrl: String
 	var requestHttpHeaders = RestEntity()
-	
 	var urlQueryParameters = RestEntity()
-	
 	var httpBodyParameters = RestEntity()
-	
 	var httpBody: Data?
+	
+	
+	init(_ url: String) {
+		baseUrl = url
+	}
 	
 	func getData(fromURL url: URL, completion: @escaping (_ data: Data?) -> Void) {
 		DispatchQueue.global(qos: .userInitiated).async {
@@ -29,9 +32,9 @@ class RestManager {
 		}
 	}
 	
-	func makeRequest(toURL url: URL,
-					 withHttpMethod httpMethod: HttpMethod,
-					 completion: @escaping (_ result: Results) -> Void) {
+	func makeRequest(toAction action: String, withHttpMethod httpMethod: HttpMethod, completion: @escaping (_ result: Results) -> Void) {
+		
+		guard let url = URL(string: baseUrl + action) else { return }
 		
 		DispatchQueue.global(qos: .userInitiated).async { [weak self] in
 			let targetURL = self?.addURLQueryParameters(toURL: url)
